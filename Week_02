@@ -1,1 +1,226 @@
-empty
+
+var bgColor = '#E0DFE5'
+var darkestGreyColor = '#272528'
+var pinkColor = '#CF85A6'
+var lightRedColor = '#BC2F28'
+var darkRedColor = '#992A2C'
+var yellowColor = '#CDBC83'
+var orangeColor = '#C19475'
+var lightGreyColor = '#BBBBC3'
+var darkColor = '#3D3B3E'
+var mediumGrey = '#BEC4D0'
+var mediumGrey2 = '#B1B5C0'
+var mediumGrey3 = '#A4ABB5'
+
+
+function setup() {
+  createCanvas(400, 400);
+  strokeWeight(10);
+}
+
+function draw() {
+  background(bgColor);
+  
+//BLACK BOXES
+  //vertical black box
+      noStroke();
+      fill(darkestGreyColor); //black box color 
+      quad(175.5, 44.5, 227, 45.5, 227, 243, 175.5, 243);
+      
+  //horizontal black box
+      noStroke();
+      fill(darkestGreyColor); //black box color
+      quad(41.5, 194.2, 190, 196, 190, 243, 41, 243);
+      
+  //small white line across vertical black box top 
+      strokeWeight(.8);
+      stroke(bgColor);
+      line(175, 90, 238, 89.2);
+      
+  //small white line across vertical black box bottom
+      strokeWeight(.7);
+      stroke(bgColor);
+      line(175, 182, 241, 182);
+      
+  //small grey boxes in the horizontal black box
+      fill(bgColor); //light grey 
+      strokeWeight(4);
+      strokeJoin(ROUND); 
+      quad(175.5, 50, 178.5, 50, 178.5, 72, 175.5, 72 );
+      fill(bgColor); //light grey THE SECOND ONE
+      strokeWeight(4);
+      strokeJoin(ROUND); 
+      quad(210, 50, 219, 50.2, 219, 72, 210, 72);
+    
+  //tiny light colored triangles
+    //left tiny triangle
+      noStroke();
+      fill(bgColor);
+      triangle(175, 120, 189, 120, 175, 124);
+    //right tiny triangle
+      noStroke();
+      fill(bgColor);
+      triangle(220, 140, 220, 146, 198, 146);
+        
+
+//PINK SHAPES
+      noStroke();
+      fill(pinkColor);
+      rect(135, 216, 29, 27);
+      
+      fill(darkestGreyColor);
+      arc(173, 204, 80, 80, 0, PI);
+      
+      noStroke();
+      fill(pinkColor);
+      rect(171, 195.5, 12, 10);
+      fill(pinkColor);
+      arc(177, 204.2, 12, 12, 0, PI);
+      
+      noStroke();
+      fill(207, 133, 166, 150);
+      triangle(94.5, 194, 96, 243, 94.9, 243)
+
+
+//RED BOXES
+  //lighter red 
+      noStroke();
+      fill(lightRedColor); 
+      quad(40.8, 243, 227, 243, 227, 283, 40.8, 283);
+  //dark red 
+      noStroke();
+      fill(darkRedColor); 
+      quad(40.8, 243, 227, 243, 227, 263, 40.8, 255);
+  //pink box
+      noStroke(); 
+      fill(207, 133, 166);
+      triangle(42, 243, 227, 243, 80, 246);
+      
+
+//YELLOW SMALL BOX (left side)
+      noStroke();
+      fill(yellowColor);//yellow
+      rect(41.5, 194.2, 20, 12);
+      noStroke(); 
+      fill(orangeColor);//orange thing inside the yellow
+      rect(41.5, 197.2, 20, 5);
+      
+
+//GREY BOXES
+  //BOTTOM GREY BOX
+      fill(lightGreyColor); //light grey 
+      strokeWeight(10);
+      strokeJoin(ROUND);
+      stroke(lightGreyColor);
+      quad(44.5, 295, 222, 295, 222, 328, 44.5, 328 );
+  
+      noStroke(); //dark dark grey box at the bottom
+      fill(darkColor);  
+      quad(39, 333, 376, 335.4, 376, 365, 39, 362);
+  //this will create the light blue triangle 
+      noStroke();
+      fill(mediumGrey);
+      rect(285, 85, 40, 90);
+  //top grey box , right side
+      fill(lightGreyColor); //light grey 
+      strokeWeight(10);
+      strokeJoin(ROUND);
+      stroke(lightGreyColor);
+      quad(236.5, 50, 380, 52.7, 380, 80, 236.5, 80);
+      noStroke();
+      fill(lightGreyColor);//creates the sharp edge on the top right 
+      quad(237, 45, 385.5, 47, 384.3, 90, 237, 90);
+    
+  
+//BLACK BOX, right side (shaped like a capital 'L')
+      fill(darkestGreyColor);
+      noStroke();
+      beginShape();
+      vertex(227, 85);
+      vertex(290, 85);
+      vertex(289.5, 155);
+      vertex(305, 155);
+      vertex(316, 235);
+      vertex(227,235);
+      endShape(CLOSE);
+  
+  //GREY PLANE on the far right, creates some of the border
+      fill(mediumGrey3);
+      noStroke();
+      beginShape();
+      vertex(295, 85);
+      vertex(384, 85);
+      vertex(376, 283);
+      vertex(320, 283);
+      endShape(CLOSE);
+  
+  //bottom grey L shape 
+      fill(lightGreyColor);
+      strokeWeight(10);
+      strokeJoin(ROUND);
+      stroke(lightGreyColor);
+      // quad(236, 246, 308, 246, 315, 327, 236, 328);
+      beginShape();
+      vertex(236, 246);
+      vertex(308, 246);
+      vertex(315, 293);
+      vertex(372, 293);
+      vertex(372, 327);
+      vertex(340, 325.5);
+      vertex(236, 327);
+      endShape(CLOSE);
+
+
+//YELLOW LINES  
+  //yellow line 1
+      strokeWeight(1.8);
+      stroke(187, 187, 94, 255);
+      line(228, 46, 228, 333.5);
+  //yellow line 2
+      strokeWeight(.8);
+      stroke(187, 187, 94, 220);
+      line(223.5, 45.5, 223.5, 165);
+  //yellow line 3
+      strokeWeight(.8);
+      stroke(187, 187, 94, 150);
+      line(220.5, 45.5, 220.5, 193);
+  //yellow line at the bottom left
+      strokeWeight(1.8);
+      stroke(187, 187, 94);
+      line(41, 287, 227, 287); 
+   //yellow line underneath the black 'L' right
+      strokeWeight(1.8);
+      stroke(187, 187, 94);
+      line(228, 235, 313, 235); 
+  //yellow line at the bottom right
+      strokeWeight(1.8);
+      stroke(187, 187, 94);
+      line(228, 333, 374, 333); 
+
+  
+//TOP LEFT SHAPE
+      fill(lightGreyColor);
+      strokeWeight(10);
+      strokeJoin(ROUND);
+      stroke(lightGreyColor);
+      quad(49, 47, 168, 50, 168, 189,  47, 187);
+    //the bottom right corner
+      noStroke();
+      fill(bgColor);
+      triangle(174, 178, 174, 194, 158, 194);
+    //circle in bottom right corner
+      noStroke();
+      fill(lightGreyColor);
+      ellipse(160, 181, 26.2, 26.2);
+        
+
+//top left front/on top shape (horiz. rectangle)
+      fill(mediumGrey2);
+      noStroke();
+      quad(45, 43, 166, 45, 166, 108, 44, 104); 
+   //small line for under the box
+      strokeWeight(1.2)
+      stroke(39, 37, 40, 55);
+      line (44, 104, 163.5, 108);
+    
+}
