@@ -1,0 +1,51 @@
+//Ariana Ijaduola
+//Lissajous Curve
+//create a sketch that animates multiple shapes along Lissajous curves
+
+
+var pointCount = 0;
+var colorFrom, colorTo;
+var lerpAmt = 0;
+var CounterA = 0;
+
+
+var factor_half=0.5
+var angle1=5;
+var angle2=1.5
+var cos_constant=150;
+var sin_constant=180
+
+
+function setup() {
+  createCanvas(400, 400);
+  background(100,3); 
+  colorMode(RGB, 360,100,100);
+  colorFrom = color(255, 0, 100);
+  colorTo = color(0,255,255);
+ 
+  
+}
+
+function draw() {
+  background (75, 0, 50, 4);
+  var x = cos(pointCount*angle1) * cos_constant;
+  var y = sin(pointCount*angle2) * sin_constant;
+  var x1 = cos(-pointCount*angle1) * cos_constant;
+  var y1 = sin(-pointCount*angle2) * sin_constant;
+
+  var lerpedColor = lerpColor(colorFrom, colorTo, lerpAmt/100);
+  fill(lerpedColor);
+  
+  ellipse(width*factor_half + x, height*factor_half + y, 30, 15);
+  rect(width*factor_half + x, height*factor_half + y, 30, 15);
+
+  ellipse(width*factor_half + x1, height*factor_half + y1, 30, 15);
+  rect(width*factor_half + x1, height*factor_half + y1, 30, 15);
+  
+  pointCount += .01;
+  lerpAmt += sin(radians(CounterA));
+
+  lerpAmt %= 100;
+  CounterA += 2;
+  
+}
