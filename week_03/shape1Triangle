@@ -1,0 +1,27 @@
+var cyan = '#00ffff';
+var yellow = '#ffff00';
+var magenta = '#ff00ff';
+
+
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+background(50);  
+  
+var numVertices = 3; // or 4 or 30
+var spacing = 360 / numVertices;
+translate(width/2, height/2);
+noStroke();
+beginShape();
+  for(var i = 0; i < 10; i++) {
+    fill(magenta);
+    var x = cos(radians(i * spacing)) * 100;
+    var y = sin(radians(i * spacing)) * 100;
+    vertex(x, y);
+}
+endShape();
+  
+  
+}
