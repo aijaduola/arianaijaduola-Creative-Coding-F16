@@ -1,0 +1,53 @@
+var bubbles = [];
+
+function setup() {
+  createCanvas(window.innerWidth, window.innerHeight);
+  // stroke(130, 213, 241)
+  frameRate(60);
+  smooth();
+  
+  colorMode(HSB,360,100,100,300);
+
+  // Create objects
+  for (var i = 0; i < 150; i++) {
+    bubbles.push(new Star());
+  }
+}
+
+function draw() {
+  background(0);
+  
+  for (var i = 0; i < bubbles.length; i++) {
+    bubbles[i].move();
+    bubbles[i].display();
+    fill(random(360), 50);
+  }
+}
+
+function Star() {
+  this.x = width / 2;
+  this.y = height / 2;
+  this.diameter = random(15, 25);
+  this.xspeed = random(0.25, 2.5);
+  this.yspeed = random(0.25, 2.5);
+  this.xdir = random(-1, 1);
+  this.ydir = random(-1, 1);
+
+  this.move = function() {
+    this.x += this.xspeed * this.xdir;
+    this.y += this.yspeed * this.ydir;
+    if ((this.x > width || this.x < 0) || (this.y > height || this.y < 0)) {
+      this.x = width / 2;
+      this.y = height / 2;
+      this.diameter = random(15, 25);
+      this.xspeed = random(0.25, 2.5);
+      this.yspeed = random(0.25, 2.5);
+      this.xdir = random(-1, 1);
+      this.ydir = random(-1, 1);
+    }
+  }
+
+  this.display = function() {
+    ellipse(this.x, this.y, this.diameter, this.diameter);
+  }
+}
