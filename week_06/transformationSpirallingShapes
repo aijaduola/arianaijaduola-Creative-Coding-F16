@@ -1,0 +1,62 @@
+//Ariana Ijaduola
+//Spiralling Circle
+
+
+var num = 9, speed=0;
+
+var colorFrom;
+var colorTo;
+var lerpAmt = 0;
+
+
+
+function setup() {
+  createCanvas(400, 400);
+  noFill();
+  colorMode(RGB, 255, 255, 255, 1);
+  //from red to blue
+  colorFrom = color(255, 0, 0);
+  colorTo = color(0, 0, 255);
+}
+ 
+function draw() {
+  background(0);
+  
+  translate(width/2, height/2);
+  strokeWeight(2);
+  
+  var lerpedColor = lerpColor(colorFrom, colorTo, lerpAmt);
+  stroke(lerpedColor);
+  lerpAmt = map( sin(radians(frameCount)), -1, 1, 0, 1);
+  
+  
+  for (var i=0; i<1; i++) {
+    push();
+    var offSet = 10;
+    rotate(offSet);
+    // var sz = map(sin(speed), -1, 1, 50, 100); // no pulsating motion
+    
+    var sz = map(sin(offSet+speed), -1, 1, 70, 80); // adds pulsating motion... experimenting
+    ellipse(0, height*.01, sz, sz);
+    translate(0, height*.01);
+    var dir=i%2===0?1:0;
+    //alter speed below. I set it to a normal speed
+    rotate(speed/3*dir); 
+    
+  for (var ari=0; ari<11; ari++) { //max 11 circles in orbit
+      push();
+      var offSet2 = TWO_PI/11*ari; // full 360 (TWO_PI) orbit split into 11 circles....ari can be replaced with a letter
+      rotate(offSet2); 
+      var sz2 = map(sin(offSet2+speed), -1, 20, 18, 16);
+      ellipse(0, sz, sz2, sz2);
+      pop();
+    }
+
+  }
+  speed += 0.1;
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight-4);
+}
+
