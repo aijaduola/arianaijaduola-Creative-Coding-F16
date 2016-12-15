@@ -1,0 +1,34 @@
+var cyan = '#00ffff';
+var yellow = '#ffff00';
+var magenta = '#ff00ff';
+
+
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+background(50);  
+  
+translate(width/2, height/2);
+
+var radius = 100;
+noStroke();
+beginShape();
+  for(var i = 0; i < 10; i++) {
+    fill(yellow);
+    var x = cos(radians(i * 36)) * 100;
+    var y = sin(radians(i * 36)) * 100;
+    vertex(x, y);
+  }
+endShape();
+
+  if(radius == 100) {
+    radius = 50;
+  } else {
+    radius = 100;
+  }
+}
+endShape();
+  
+  
