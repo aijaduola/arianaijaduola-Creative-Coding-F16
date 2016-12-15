@@ -1,0 +1,25 @@
+//Ariana Ijaduola
+//Josef Albers - Stripes 
+
+function setup() {
+  createCanvas(400, 400);
+  background('#053642');
+  strokeWeight(10);
+  strokeCap(SQUARE);
+  frameRate(12);
+}
+
+function draw() {
+  // for (var i = 0; i < width; i++) {
+    var w = random(width); //random X
+    var colorList = [ "#053642", "#DBC49E", "#8D270C", "#410604", "#C02213"]; //color list
+    var c = round(random(4));  // select random color
+    stroke(colorList[c]); //set fill color
+    noFill();
+    line(w,0,w,height)
+    // smooth(); //just smooth
+    }
+// }
+// function windowResized() {
+//   resizeCanvas(windowWidth, windowHeight);
+// }
