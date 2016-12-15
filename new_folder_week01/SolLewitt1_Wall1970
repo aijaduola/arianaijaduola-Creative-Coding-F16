@@ -1,0 +1,20 @@
+//Ariana Ijaduola
+// Wall Drawing #46 (1970)
+// Vertical lines, not straight, not touching, covering the wall evenly.
+
+function setup() {
+  createCanvas(600, 400);
+  background(250);
+  stroke(10,200,50);
+  strokeCap(SQUARE);
+  strokeWeight(2);
+        
+        
+        for (var x = 0; x < width; x = x+6) {
+            var y = random(.5,height);
+            line( x, 0, x, y);
+            line(x, y, x+6, y+6);
+            line(x+6, y+4, x, y+10);
+            line(x, y+10, x, height);
+        }
+      }
